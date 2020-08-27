@@ -4,22 +4,13 @@ require_relative 'application'
 # Initialize the Rails application.
 Rails.application.initialize!
 
-# ActionMailer::Base.smtp_settings = {
-#   :user_name => Rails.application.credentials.dig(:sendgrid, :SENDGRID_USERNAME),
-#   :password => Rails.application.credentials.dig(:sendgrid, :SENGRID_PASSWORD),
-#   :domain => 'heroku.com',
-#   :address => 'smtp.sendgrid.net',
-#   :port => 587,
-#   :authentication => :plain,
-#   :enable_starttls_auto => true
-# }
-
 ActionMailer::Base.smtp_settings = {
-  address: 'smtp.sendgrid.net',
-  port: 587,
-  domain: 'heroku.com',
-  user_name: Rails.application.credentials.dig(:sendgrid, :SENDGRID_USERNAME),
-  password: Rails.application.credentials.dig(:sendgrid, :SENDGRID_PASSWORD),
-  authentication: :login,
-  enable_starttls_auto: true
+  :user_name => Rails.application.credentials.dig(:gmail, :gmail_username),
+  :password => Rails.application.credentials.dig(:gmail, :gmail_password),
+  :domain => 'heroku.com',
+  :address => 'smtp.gmail.com',
+  :port => 587,
+  :authentication => :plain,
+  :enable_starttls_auto => true
 }
+
