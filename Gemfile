@@ -27,7 +27,12 @@ gem 'twitter-bootstrap-rails'
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 gem 'jquery-rails'
-
+# image upload manager
+gem 'carrierwave'
+# Cloud service library
+gem 'fog-aws', '~> 3.6', '>= 3.6.7'
+# Edit images
+gem 'mini_magick'
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false
 # Payments
